@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:projekat3020@localhost:5432/event_planning"
+}
+
+model Partner {
+  id    String   @id @default(uuid())
+  name  String   @default("")
+  events Event[]
+}
+
+model Event {
+  id        String   @id @default(uuid())
+  name      String
+  dateStart DateTime
+  dateEnd   DateTime
+  status    String
+  partnerId String
+  Partner   Partner  @relation(fields: [partnerId], references: [id])
+}

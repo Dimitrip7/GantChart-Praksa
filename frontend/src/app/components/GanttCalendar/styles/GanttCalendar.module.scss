@@ -1,0 +1,122 @@
+.container {
+  padding: 0.8rem;
+
+  .filters {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+
+    .select {
+      min-width: 150px;
+      margin-right: 1rem;
+    }
+
+    .button {
+      border-radius: 5px;
+      padding: 0.4rem 0.8rem;
+      margin-left: 1rem;
+      background-color: white;
+      color: black;
+      font-weight: 550;
+    }
+
+    .button2 {
+      width: 6rem;
+      height: 2.4rem;
+      font-size: 0.6rem;
+      font-weight: 550;
+      color: white;
+      background-color: #ec407a;
+      white-space: nowrap;
+      overflow: hidden;
+      border-radius: 5px;
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .redLine {
+    height: 2.6px;
+    background-color: #ec407a;
+    margin-bottom: 0.8rem;
+  }
+
+  .calendarHeader {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr repeat(10, 1fr);
+    margin-bottom: 0.6rem;
+
+    .headerText {
+      font-weight: bold;
+      text-align: left;
+      font-size: 0.9rem;
+      padding: 0.18rem;
+    }
+
+    .dayText {
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .borderLeft {
+      border-left: 2px solid #ddd;
+    }
+
+    .borderLeftRight {
+      border-left: 2px solid #ddd;
+      border-right: 2px solid #ddd;
+    }
+  }
+
+  .eventRow {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr repeat(10, 1fr);
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+
+    &:nth-child(even) {
+      background-color: #efeaea; /* Light gray for alternating rows */
+    }
+
+    &:first-child {
+      border-top: 1px solid #ddd; /* Top border for the first row */
+    }
+
+    .eventName,
+    .eventDate {
+      padding: 0.3rem 0.8rem;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .eventName {
+      font-weight: bold;
+    }
+
+    .eventDate {
+      text-align: center;
+    }
+
+    .dayCell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      border: 1px solid #ddd;
+      position: relative;
+
+      .eventBar {
+        width: calc(100% + 3px);
+        height: 20px;
+        background-color: inherit;
+        position: absolute;
+        top: 50%;
+        transform: translate(-2px, -50%);
+        z-index: 1;
+      }
+    }
+  }
+}
